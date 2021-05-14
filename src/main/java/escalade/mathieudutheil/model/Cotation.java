@@ -3,7 +3,8 @@ package escalade.mathieudutheil.model;
 
 import javax.persistence.*;
 
-@Entity
+
+    @Entity
     public class Cotation {
 
         @Id
