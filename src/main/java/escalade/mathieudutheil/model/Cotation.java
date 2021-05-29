@@ -8,19 +8,20 @@ public class Cotation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "cotation_id")
-    private Integer cotationId;
+    @Column(name = "id")
+    private Integer id;
 
     @Column(name = "cotation")
     private String cotation;
 
-    //Getter and Setter
-    public Integer getCotationId() {
-        return cotationId;
+
+    //Getters and Setters
+    public Integer getId() {
+        return id;
     }
 
-    public void setCotationId(Integer cotationId) {
-        this.cotationId = cotationId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getCotation() {

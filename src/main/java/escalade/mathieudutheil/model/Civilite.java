@@ -9,18 +9,19 @@ public class Civilite {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Integer civiliteId;
+    private Integer id;
 
     @Column(name = "civilite")
     private String civilite;
 
-    //Getter and Setter
-    public Integer getCiviliteId() {
-        return civiliteId;
+
+    //Getters and Setters
+    public Integer getId() {
+        return id;
     }
 
-    public void setCiviliteId(Integer civiliteId) {
-        this.civiliteId = civiliteId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getCivilite() {

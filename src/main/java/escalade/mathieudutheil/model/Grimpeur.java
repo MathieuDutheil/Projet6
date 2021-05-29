@@ -8,8 +8,8 @@ public class Grimpeur {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "grimpeur_id")
-    private Integer grimpeurId;
+    @Column(name = "id")
+    private Integer id;
 
     @Column(name = "nom")
     private String nom;
@@ -29,13 +29,14 @@ public class Grimpeur {
     @Column(name = "membre_association")
     private Boolean membreAssociation;
 
-    //Getter and Setter
-    public Integer getGrimpeurId() {
-        return grimpeurId;
+
+    //Getters and Setters
+    public Integer getId() {
+        return id;
     }
 
-    public void setGrimpeurId(Integer grimpeurId) {
-        this.grimpeurId = grimpeurId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNom() {

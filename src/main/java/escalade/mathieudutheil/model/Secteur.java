@@ -8,8 +8,8 @@ public class Secteur {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "secteur_id")
-    private Integer secteurId;
+    @Column(name = "id")
+    private Integer id;
 
     @Column(name = "nom")
     private String nom;
@@ -20,13 +20,12 @@ public class Secteur {
     @Column(name = "altitude")
     private String altitude;
 
-    //Getter and Setter
-    public Integer getSecteurId() {
-        return secteurId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setSecteurId(Integer secteurId) {
-        this.secteurId = secteurId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNom() {

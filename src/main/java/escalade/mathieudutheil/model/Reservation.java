@@ -9,19 +9,20 @@ public class Reservation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "reservation_id")
-    private Integer reservationId;
+    @Column(name = "id")
+    private Integer id;
 
     @Column(name = "date_reservation")
     private Date dateReservation;
 
-    //Getter and Setter
-    public Integer getReservationId() {
-        return reservationId;
+
+    //Getters and Setters
+    public Integer getId() {
+        return id;
     }
 
-    public void setReservationId(Integer reservationId) {
-        this.reservationId = reservationId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Date getDateReservation() {
@@ -31,6 +32,4 @@ public class Reservation {
     public void setDateReservation(Date dateReservation) {
         this.dateReservation = dateReservation;
     }
-
-
 }

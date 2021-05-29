@@ -10,19 +10,20 @@ public class Statut {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "statut_id")
-    private Integer statudId;
+    @Column(name = "id")
+    private Integer id;
 
     @Column(name = "statut")
     private String statut;
 
-    //Getter and Setter
-    public Integer getStatudId() {
-        return statudId;
+
+    //Getters and Setters
+    public Integer getId() {
+        return id;
     }
 
-    public void setStatudId(Integer statudId) {
-        this.statudId = statudId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getStatut() {

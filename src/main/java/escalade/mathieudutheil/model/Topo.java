@@ -11,8 +11,8 @@ public class Topo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "topo_id")
-    private Integer topoId;
+    @Column(name = "id")
+    private Integer id;
 
     @Column(name = "nom")
     private String nom;
@@ -29,13 +29,14 @@ public class Topo {
     @Column(name = "disponible")
     private Boolean disponible;
 
-    //Getter and Setters
-    public Integer getTopoId() {
-        return topoId;
+
+    //Getters and Setters
+    public Integer getId() {
+        return id;
     }
 
-    public void setTopoId(Integer topoId) {
-        this.topoId = topoId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNom() {

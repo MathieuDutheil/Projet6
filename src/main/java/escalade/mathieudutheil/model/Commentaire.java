@@ -8,19 +8,20 @@ public class Commentaire {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "commentaire_id")
-    private Integer commentaireId;
+    @Column(name = "id")
+    private Integer id;
 
     @Column(name = "commentaire")
     private String commentaire;
 
-    //Getter and Setter
-    public Integer getCommentaireId() {
-        return commentaireId;
+
+    //Getters and Setters
+    public Integer getId() {
+        return id;
     }
 
-    public void setCommentaireId(Integer commentaireId) {
-        this.commentaireId = commentaireId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getCommentaire() {
@@ -31,3 +32,5 @@ public class Commentaire {
         this.commentaire = commentaire;
     }
 }
+
+

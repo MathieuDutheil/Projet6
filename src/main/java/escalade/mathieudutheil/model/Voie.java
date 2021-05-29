@@ -8,8 +8,8 @@ public class Voie {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "voie_id")
-    private Integer voieId;
+    @Column(name = "id")
+    private Integer id;
 
     @Column(name = "numero")
     private Integer numero;
@@ -26,13 +26,14 @@ public class Voie {
     @Column(name = "voie_equipee")
     private Boolean voieEquipee;
 
-    //Getter and Setters
-    public Integer getVoieId() {
-        return voieId;
+
+    //Getters and Setters
+    public Integer getId() {
+        return id;
     }
 
-    public void setVoieId(Integer voieId) {
-        this.voieId = voieId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Integer getNumero() {
