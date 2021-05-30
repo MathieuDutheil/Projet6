@@ -1,6 +1,8 @@
 package escalade.mathieudutheil.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "secteur")
@@ -19,6 +21,14 @@ public class Secteur {
 
     @Column(name = "altitude")
     private String altitude;
+/*
+    @OneToMany(
+            cascade = CascadeType.ALL, //Si je supprime le Site de grimpe, cela supprimera les secteurs associés, si je mets à jour pareil
+            orphanRemoval = true, //Evite qu'en base de de données il existe des secteur alors que le site de grimpe a été supprimé
+            fetch = FetchType.EAGER // lorsqu'on va récupérer le site de grimpe tous les secteurs seront récupérés
+    )
+    @JoinColumn(name = "secteur_id")
+    private List<Voie> voies = new ArrayList<>();*/
 
     public Integer getId() {
         return id;
@@ -51,4 +61,12 @@ public class Secteur {
     public void setAltitude(String altitude) {
         this.altitude = altitude;
     }
+/*
+    public List<Voie> getVoies() {
+        return voies;
+    }
+
+    public void setVoies(List<Voie> voies) {
+        this.voies = voies;
+    }*/
 }
