@@ -3,6 +3,7 @@ package escalade.mathieudutheil;
 
 import escalade.mathieudutheil.model.Civilite;
 import escalade.mathieudutheil.model.Grimpeur;
+import escalade.mathieudutheil.model.Secteur;
 import escalade.mathieudutheil.model.SiteDeGrimpe;
 import escalade.mathieudutheil.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,28 +40,34 @@ public class Application implements CommandLineRunner {
     @Transactional
     @Override
     public void run(String... args) throws Exception {
-       /* Iterable<Civilite> civilites = civiliteService.getCivilites();
-        civilites.forEach(civilite -> System.out.println(civilite.getCivilite()));
 
+        // Lectures de données
+        // Récupère toutes les civilité et les affiches
+        Iterable<Civilite> civilites = civiliteService.getCivilites();
+        civilites.forEach(civilite -> System.out.println(civilite.getId() + " " + civilite.getCivilite()));
+
+        // Récupère l'id 3 de la table civilite et l'affiche
         Optional<Civilite> optCivilite = civiliteService.getCiviliteById(3);
         Civilite civiliteId3 = optCivilite.get();
         System.out.println(civiliteId3.getId() + " " + civiliteId3.getCivilite());
 
-        Iterable<Grimpeur> grimpeurs = grimpeurService.getGrimpeurs();
-        grimpeurs.forEach(grimpeur -> System.out.println(grimpeur.getNom() + " " + grimpeur.getPrenom() + " " + grimpeur.getEmail()));
-
-        Optional<Grimpeur> optGrimpeur = grimpeurService.getGrimpeurById(1);
-        Grimpeur grimpeurId1 = optGrimpeur.get();
-        System.out.println(grimpeurId1.getMembreAssociation());*/
-
+        // Récupère l'id 1 du parent SiteDeGrimpe et l'affiche
         Optional<SiteDeGrimpe> optSiteDeGrimpe = siteDeGrimpeService.getSiteDeGrimpeById(1);
         SiteDeGrimpe siteDeGrimpeId1 = optSiteDeGrimpe.get();
-
         System.out.println(siteDeGrimpeId1.getNom());
-
+        // Récupère l'enfant Secteur de l'id 1 du SiteDeGrimpe et l'affiche
         siteDeGrimpeId1.getSecteurs().forEach(
                 secteur -> System.out.println(secteur.getNom()));
 
+
+        // Récupère l'id 1 du parent Secteur et l'affiche
+        Optional<Secteur> optSecteur = secteurService.getSecteurById(1);
+        Secteur secteurId1 = optSecteur.get();
+        System.out.println(secteurId1.getNom());
+        // Récupère l'enfant Voie de l'id 1 du Secteur et l'affiche
+        secteurId1.getVoies().forEach(
+                voie -> System.out.println(voie.getNom())
+        );
 
     }
 }
