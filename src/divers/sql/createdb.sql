@@ -61,7 +61,7 @@ CREATE TABLE voie (
                 remarques VARCHAR(255),
                 nombres_longueur SMALLINT NOT NULL,
                 voie_equipee BOOLEAN NOT NULL,
-                cotation_id INT ,
+                cotation_id INT,
                 secteur_id INT NOT NULL,
                 PRIMARY KEY (id)
 );
@@ -83,8 +83,8 @@ CREATE TABLE topo (
 CREATE TABLE commentaire (
                 id INT AUTO_INCREMENT NOT NULL,
                 commentaire VARCHAR(255) NOT NULL,
-                grimpeur_fk INT NOT NULL,
-                site_de_grimpe_fk INT NOT NULL,
+                grimpeur_id INT NOT NULL,
+                site_de_grimpe_id INT NOT NULL,
                 PRIMARY KEY (id)
 );
 
@@ -124,7 +124,7 @@ ON DELETE NO ACTION
 ON UPDATE NO ACTION;
 
 ALTER TABLE commentaire ADD CONSTRAINT grimpeur_commentaire_fk
-FOREIGN KEY (grimpeur_fk)
+FOREIGN KEY (grimpeur_id)
 REFERENCES grimpeur (id)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION;
@@ -142,7 +142,7 @@ ON DELETE NO ACTION
 ON UPDATE NO ACTION;
 
 ALTER TABLE commentaire ADD CONSTRAINT site_de_grimpe_commentaire_fk
-FOREIGN KEY (site_de_grimpe_fk)
+FOREIGN KEY (site_de_grimpe_id)
 REFERENCES site_de_grimpe (id)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION;
