@@ -14,8 +14,8 @@ public class Voie {
     @Column(name = "numero")
     private Integer numero;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "nom")
+    private String nom;
 
     @Column(name = "remarques")
     private String remarques;
@@ -25,6 +25,7 @@ public class Voie {
 
     @Column(name = "voie_equipee")
     private Boolean voieEquipee;
+
 
 
     //Getters and Setters
@@ -44,12 +45,12 @@ public class Voie {
         this.numero = numero;
     }
 
-    public String getName() {
-        return name;
+    public String getNom() {
+        return nom;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
     public String getRemarques() {
