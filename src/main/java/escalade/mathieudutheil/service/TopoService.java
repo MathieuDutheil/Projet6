@@ -20,4 +20,12 @@ public class TopoService {
     public Optional<Topo> getTopoById(Integer id) {
         return topoRepository.findById(id);
     }
+
+    public Topo saveTopo(Topo topo) {
+        return topoRepository.save(topo);
+    }
+
+    public void deleteTopoById(Integer id) {
+        topoRepository.deleteById(id);
+    }
 }

@@ -20,4 +20,12 @@ public class ReservationService {
     public Optional<Reservation> getReservationById(Integer id){
         return reservationRepository.findById(id);
     }
+
+    public Reservation saveReservation(Reservation reservation) {
+        return reservationRepository.save(reservation);
+    }
+
+    public void deleteReservationById(Integer id) {
+        reservationRepository.deleteById(id);
+    }
 }

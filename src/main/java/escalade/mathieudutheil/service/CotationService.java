@@ -20,4 +20,12 @@ public class CotationService {
     public Optional<Cotation> getCotationById(Integer id){
         return cotationRepository.findById(id);
     }
+
+    public Cotation saveCotation(Cotation cotation) {
+        return cotationRepository.save(cotation);
+    }
+
+    public void deleteCotationById(Integer id) {
+        cotationRepository.deleteById(id);
+    }
 }

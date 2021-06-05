@@ -21,6 +21,14 @@ public class StatutService {
         return statutRepository.findById(id);
     }
 
+    public Statut saveStatut(Statut statut) {
+        return statutRepository.save(statut);
+    }
+
+    public void deleteStatutById(Integer id) {
+        statutRepository.deleteById(id);
+    }
+
 
 
 }

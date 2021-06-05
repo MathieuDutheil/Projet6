@@ -23,4 +23,12 @@ public class GrimpeurService {
     public Optional<Grimpeur> getGrimpeurById(Integer id) {
         return grimpeurRepository.findById(id);
     }
+
+    public Grimpeur saveCategory(Grimpeur grimpeur) {
+        return grimpeurRepository.save(grimpeur);
+    }
+
+    public void deleteGrimpeurById(Integer id) {
+        grimpeurRepository.deleteById(id);
+    }
 }

@@ -20,4 +20,12 @@ public class VoieService {
     public Optional<Voie> getVoieById(Integer id) {
         return voieRepository.findById(id);
     }
+
+    public Voie saveVoie(Voie voie) {
+        return voieRepository.save(voie);
+    }
+
+    public void deleteVoieById(Integer id) {
+        voieRepository.deleteById(id);
+    }
 }

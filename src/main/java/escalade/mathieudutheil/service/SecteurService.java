@@ -22,4 +22,12 @@ public class SecteurService {
     public Optional<Secteur> getSecteurById(Integer id) {
         return secteurRepository.findById(id);
     }
+
+    public Secteur saveSecteur(Secteur secteur) {
+        return secteurRepository.save(secteur);
+    }
+
+    public void deleteSecteurById(Integer id) {
+        secteurRepository.deleteById(id);
+    }
 }

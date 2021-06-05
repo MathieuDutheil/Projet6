@@ -20,4 +20,13 @@ public class CommentaireService {
     public Optional<Commentaire> getCommentaireById(Integer id){
         return commentaireRepository.findById(id);
     }
+
+    public Commentaire saveCommentaire(Commentaire commentaire) {
+        return commentaireRepository.save(commentaire);
+    }
+
+    public void deleteCommentaireById(Integer id) {
+        commentaireRepository.deleteById(id);
+    }
+
 }

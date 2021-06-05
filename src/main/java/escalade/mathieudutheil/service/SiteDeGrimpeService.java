@@ -20,4 +20,13 @@ public class SiteDeGrimpeService {
     public Optional<SiteDeGrimpe> getSiteDeGrimpeById(Integer id) {
         return siteDeGrimpeRepository.findById(id);
     }
+
+    public SiteDeGrimpe saveSiteDeGrimpe(SiteDeGrimpe siteDeGrimpe) {
+        return siteDeGrimpeRepository.save(siteDeGrimpe);
+    }
+
+    public void deleteSiteDeGrimpeById(Integer id) {
+        siteDeGrimpeRepository.deleteById(id);
+    }
+
 }
