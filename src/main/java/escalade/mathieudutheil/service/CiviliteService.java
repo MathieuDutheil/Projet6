@@ -20,4 +20,14 @@ public class CiviliteService {
     public Optional<Civilite> getCiviliteById(Integer id) {
         return civiliteRepository.findById(id);
     }
+
+    public Civilite saveCivilite(Civilite civilite) {
+        return civiliteRepository.save(civilite);
+    }
+
+    public void deleteCiviliteById(Integer id) {
+        civiliteRepository.deleteById(id);
+    }
+
+
 }
