@@ -12,7 +12,8 @@ INSERT INTO grimpeur
 (id, nom, prenom, email, mot_de_passe, telephone, membre_association, civilite_id)
 VALUES
 (1, "Dutheil", "Mathieu", "mathieudutheil92@gmail.com", "1234", "118218", TRUE, 2),
-(2, "Kamtchoiang", "Noée", "noeekamtchoiang@gmail.com", "5678", "218118", FALSE,3)
+(2, "Kamtchoiang", "Noée", "noeekamtchoiang@gmail.com", "5678", "218118", FALSE,3),
+(3, "Springsteen", "Bruce", "brucespringsteen@gmail.com", "06019", "911", TRUE, 2)
 ;
 
 INSERT INTO statut 
@@ -56,7 +57,7 @@ VALUES
 
 
 INSERT INTO reservation
-(id, date_reservation, grimpeur_fk, topo_id, statut_id)
+(id, date_reservation, grimpeur_id, topo_id, statut_id)
 VALUES
 (1, "2021-04-25", 1, 1, 2),
 (2, "2021-03-31", 2, 2, 4)
@@ -80,7 +81,8 @@ INSERT INTO voie
 (id, numero, nom, remarques, nombres_longueur, voie_equipee, cotation_id, secteur_id)
 VALUES
 (2, 234, "Raoul", "Aie Caramba", 44, TRUE, 2, 1),
-(3, 432, "Pedro", "Outch Raoul", 4, FALSE, 3, 3)
+(3, 432, "Pedro", "Outch Raoul", 4, FALSE, 3, 3),
+(4, 666, "HellBoy", "Seul Hercule en revient vivant", 66, FALSE, 3, 1)
 ;
 
 
