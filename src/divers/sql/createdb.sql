@@ -92,7 +92,7 @@ CREATE TABLE commentaire (
 CREATE TABLE reservation (
                 id INT AUTO_INCREMENT NOT NULL,
                 date_reservation DATETIME NOT NULL,
-                grimpeur_fk INT NOT NULL,
+                grimpeur_id INT NOT NULL,
                 topo_id INT NOT NULL,
                 statut_id INT NOT NULL,
                 PRIMARY KEY (id)
@@ -118,7 +118,7 @@ ON DELETE NO ACTION
 ON UPDATE NO ACTION;
 
 ALTER TABLE reservation ADD CONSTRAINT grimpeur_reservation_fk
-FOREIGN KEY (grimpeur_fk)
+FOREIGN KEY (grimpeur_id)
 REFERENCES grimpeur (id)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION;
