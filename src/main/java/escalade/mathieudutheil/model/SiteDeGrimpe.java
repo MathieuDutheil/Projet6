@@ -26,12 +26,40 @@ public class SiteDeGrimpe {
     private Boolean taggeAssociation;
 
     @OneToMany(
-        cascade = CascadeType.ALL, //Si je supprime le Site de grimpe, cela supprimera les secteurs associés, si je mets à jour pareil
+            cascade = CascadeType.ALL, //Si je supprime le Site de grimpe, cela supprimera les secteurs associés, si je mets à jour pareil
             orphanRemoval = true, //Evite qu'en base de de données il existe des Secteurs alors que le Site de grimpe a été supprimé
             fetch = FetchType.EAGER // lorsqu'on va récupérer le site de grimpe tous les secteurs seront récupérés
     )
     @JoinColumn(name = "site_de_grimpe_id")
     private List<Secteur> secteurs = new ArrayList<>();
+
+    @OneToMany(
+            fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            }
+    )
+    @JoinColumn(name = "site_de_grimpe_id")
+    private List<Commentaire> commentaires = new ArrayList<>();
+
+    @OneToMany(
+            fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            }
+    )
+    @JoinColumn(name = "site_de_grimpe_id")
+    private List<Topo> topos = new ArrayList<>();
+
+    /*@ManyToOne(
+            fetch = FetchType.LAZY,
+            cascade = {CascadeType.PERSIST,
+                    CascadeType.MERGE
+            }
+    )
+    private List<Grimpeur>*/
 
 
     //Getters and Setters
@@ -83,5 +111,19 @@ public class SiteDeGrimpe {
         this.secteurs = secteurs;
     }
 
+    public List<Commentaire> getCommentaires() {
+        return commentaires;
+    }
 
+    public void setCommentaires(List<Commentaire> commentaires) {
+        this.commentaires = commentaires;
+    }
+
+    public List<Topo> getTopos() {
+        return topos;
+    }
+
+    public void setTopos(List<Topo> topos) {
+        this.topos = topos;
+    }
 }
