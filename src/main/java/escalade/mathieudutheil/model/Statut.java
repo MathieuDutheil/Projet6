@@ -2,6 +2,8 @@ package escalade.mathieudutheil.model;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -16,6 +18,15 @@ public class Statut {
     @Column(name = "statut")
     private String statut;
 
+    @OneToMany(
+            fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            }
+    )
+    @JoinColumn(name = "statut_id")
+    private List<Reservation> reservations = new ArrayList<>();
 
     //Getters and Setters
     public Integer getId() {
@@ -32,5 +43,13 @@ public class Statut {
 
     public void setStatut(String statut) {
         this.statut = statut;
+    }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
     }
 }
