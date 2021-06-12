@@ -1,6 +1,8 @@
 package escalade.mathieudutheil.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "civilite")
@@ -13,6 +15,16 @@ public class Civilite {
 
     @Column(name = "civilite")
     private String civilite;
+
+    @OneToMany(
+            fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            }
+    )
+    @JoinColumn(name = "civilite_id")
+    private List<Grimpeur> grimpeurs = new ArrayList<>();
 
 
     //Getters and Setters
@@ -30,5 +42,13 @@ public class Civilite {
 
     public void setCivilite(String civilite) {
         this.civilite = civilite;
+    }
+
+    public List<Grimpeur> getGrimpeurs() {
+        return grimpeurs;
+    }
+
+    public void setGrimpeurs(List<Grimpeur> grimpeurs) {
+        this.grimpeurs = grimpeurs;
     }
 }
