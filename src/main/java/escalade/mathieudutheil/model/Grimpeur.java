@@ -25,6 +25,8 @@ public class Grimpeur {
     @Column(name = "mot_de_passe")
     private String motDePasse;
 
+    private String confirmationMotDePasse;
+
     @Column(name = "telephone")
     private String telephone;
 
@@ -151,5 +153,21 @@ public class Grimpeur {
 
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
+    }
+
+    public String getConfirmationMotDePasse() {
+        return confirmationMotDePasse;
+    }
+
+    public void setConfirmationMotDePasse(String confirmationMotDePasse) {
+        this.confirmationMotDePasse = confirmationMotDePasse;
+    }
+
+    public List<SiteDeGrimpe> getSiteDeGrimpes() {
+        return siteDeGrimpes;
+    }
+
+    public void setSiteDeGrimpes(List<SiteDeGrimpe> siteDeGrimpes) {
+        this.siteDeGrimpes = siteDeGrimpes;
     }
 }
