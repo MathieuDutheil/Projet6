@@ -21,7 +21,7 @@ public class Application implements CommandLineRunner {
     private GrimpeurService grimpeurService;
 
     @Autowired
-    SiteDeGrimpeService siteDeGrimpeService;
+    private SiteDeGrimpeService siteDeGrimpeService;
 
     @Autowired
     private SecteurService secteurService;
@@ -93,20 +93,26 @@ public class Application implements CommandLineRunner {
         Optional<Grimpeur> optionalGrimpeur= grimpeurService.getGrimpeurById(1);
         Grimpeur grimpeurId1 = optionalGrimpeur.get();
         grimpeurId1.getCommentaires().forEach(commentaire -> System.out.println(commentaire.getId()+commentaire.getId()+commentaire.getCommentaire()));
-        /*//Ajouter un site de grimpe
-        siteDeGrimpeService.getSiteDeGrimpes().forEach(
-                siteDeGrimpe -> System.out.println(siteDeGrimpe.getNom()));
 
-        SiteDeGrimpe newSiteDeGrimpe = new SiteDeGrimpe();
-        newSiteDeGrimpe.setNom("Coco l'asticot");
-        newSiteDeGrimpe.setDescriptif("Un ver de terre tout mignon");
-        newSiteDeGrimpe.setAcces("Dans la terre pardi");
-        newSiteDeGrimpe.setTaggeAssociation(false);
 
-        newSiteDeGrimpe = siteDeGrimpeService.saveSiteDeGrimpe(newSiteDeGrimpe);
 
-        siteDeGrimpeService.getSiteDeGrimpes().forEach(
-                siteDeGrimpe -> System.out.println(siteDeGrimpe.getNom()));*/
 
+        //Ajouter un grimpeur
+        /*Grimpeur newGrimpeur = new Grimpeur();
+
+        newGrimpeur.setNom("Bernard");
+        newGrimpeur.setPrenom("Al");
+        newGrimpeur.setEmail("alcapone@gmail.com");
+        newGrimpeur.setMotDePasse("564564");
+        newGrimpeur.setTelephone("0601960840");
+        newGrimpeur.setMembreAssociation(false);
+        newGrimpeur.setCivilite(civiliteId2);
+        grimpeurService.saveGrimpeur(newGrimpeur);*/
+
+        //Supprimer un grimpeur
+        grimpeurService.deleteGrimpeurById(4);
+        grimpeurService.deleteGrimpeurById(5);
+        grimpeurService.deleteGrimpeurById(6);
+        grimpeurService.deleteGrimpeurById(7);
     }
 }
