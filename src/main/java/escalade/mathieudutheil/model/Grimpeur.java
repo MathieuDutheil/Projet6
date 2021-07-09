@@ -25,6 +25,7 @@ public class Grimpeur {
     @Column(name = "mot_de_passe")
     private String motDePasse;
 
+    @Transient
     private String confirmationMotDePasse;
 
     @Column(name = "telephone")
@@ -32,6 +33,18 @@ public class Grimpeur {
 
     @Column(name = "membre_association")
     private Boolean membreAssociation;
+
+
+    @ManyToOne(
+            fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            }
+    )
+    @JoinColumn(name = "civilite_id")
+    private Civilite civilite;
+
 
     @OneToMany(
             fetch = FetchType.LAZY,
@@ -170,4 +183,13 @@ public class Grimpeur {
     public void setSiteDeGrimpes(List<SiteDeGrimpe> siteDeGrimpes) {
         this.siteDeGrimpes = siteDeGrimpes;
     }
+
+    public Civilite getCivilite() {
+        return civilite;
+    }
+
+    public void setCivilite(Civilite civilite) {
+        this.civilite = civilite;
+    }
+
 }

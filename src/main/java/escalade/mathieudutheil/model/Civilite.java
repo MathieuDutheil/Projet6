@@ -17,13 +17,8 @@ public class Civilite {
     private String civilite;
 
     @OneToMany(
-            fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            }
+            mappedBy = "civilite"
     )
-    @JoinColumn(name = "civilite_id")
     private List<Grimpeur> grimpeurs = new ArrayList<>();
 
 
