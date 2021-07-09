@@ -1,5 +1,16 @@
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+
+<label for="civiliteGrimpeur">Civilite <span class="requis">*</span></label>
+<select id="civiliteGrimpeur" name="civiliteGrimpeur">
+    <c:forEach items="${listeCivilites}" var="civilite">
+        <%--<option value="${civilite.id}">${civilite.name}</option>--%>
+        <option>${civilite}</option>
+    </c:forEach>
+</select>
+<br/>
+
 <label for="nomGrimpeur">Nom <span class="requis">*</span></label>
 <input type="text" id="nomGrimpeur" name="nomGrimpeur" value="<c:out value="${grimpeur.nom}"/>" size="30" maxlength="30" />
 <span class="erreur">${form.erreurs['nomGrimpeur']}</span>

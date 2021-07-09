@@ -4,7 +4,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Création d'un client</title>
+  <title>Création d'un grimpeur</title>
   <link type="text/css" rel="stylesheet" href="<c:url value="/inc/style.css"/>" />
 </head>
 <body>
@@ -12,7 +12,7 @@
 <div>
   <form method="post" action="<c:url value="/creationGrimpeur"/>">
     <fieldset>
-      <legend>Informations client</legend>
+      <legend>Informations grimpeur</legend>
       <c:import url="/inc/inc_grimpeur_form.jsp" />
     </fieldset>
     <p class="info">${ form.resultat }</p>

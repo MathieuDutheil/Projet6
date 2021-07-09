@@ -1,5 +1,6 @@
 package escalade.mathieudutheil.forms;
 
+import escalade.mathieudutheil.model.Civilite;
 import escalade.mathieudutheil.model.Grimpeur;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +14,7 @@ public class CreationGrimpeurForm {
     private static final String CHAMP_MOT_DE_PASSE = "motDePasseGrimpeur";
     private static final String CHAMP_CONFIRMATION_MOT_DE_PASSE = "confirmationMotDePasseGrimpeur";
     private static final String CHAMP_TELEPHONE = "telephoneGrimpeur";
+    private static final String CHAMP_CIVILITE = "civiliteGrimpeur";
     //TODO rajouter boolean MEMBRE_ASSOCIATION plus tard
 
     private String resultat;
@@ -28,15 +30,20 @@ public class CreationGrimpeurForm {
     }
 
     public Grimpeur creerGrimpeur(HttpServletRequest request) {
+        String civilite = Utilities.getValeurChamp(request, CHAMP_CIVILITE);
         String nom = Utilities.getValeurChamp(request, CHAMP_NOM);
         String prenom = Utilities.getValeurChamp(request, CHAMP_PRENOM);
         String email = Utilities.getValeurChamp(request, CHAMP_EMAIL);
         String motDePasse = Utilities.getValeurChamp(request, CHAMP_MOT_DE_PASSE);
         String confirmationMotDePasse = Utilities.getValeurChamp(request, CHAMP_CONFIRMATION_MOT_DE_PASSE);
         String telephone = Utilities.getValeurChamp(request, CHAMP_TELEPHONE);
+
         //TODO rajouter boolean MEMBRE_ASSOCIATION plus tard
 
         Grimpeur grimpeur = new Grimpeur();
+        grimpeur.setMembreAssociation(false);
+
+
 
         try {
             validationNom(nom);
