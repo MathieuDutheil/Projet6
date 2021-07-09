@@ -1,7 +1,5 @@
 package escalade.mathieudutheil.service;
 
-
-import escalade.mathieudutheil.model.Civilite;
 import escalade.mathieudutheil.model.Grimpeur;
 import escalade.mathieudutheil.repository.GrimpeurRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +22,7 @@ public class GrimpeurService {
         return grimpeurRepository.findById(id);
     }
 
-    public Grimpeur saveCategory(Grimpeur grimpeur) {
+    public Grimpeur saveGrimpeur(Grimpeur grimpeur) {
         return grimpeurRepository.save(grimpeur);
     }
 
